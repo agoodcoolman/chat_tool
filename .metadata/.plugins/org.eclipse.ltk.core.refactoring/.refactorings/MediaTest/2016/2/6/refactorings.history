@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;MediaTest&apos;&#x0D;&#x0A;- Original project: &apos;MediaTest&apos;&#x0D;&#x0A;- Original element: &apos;com.pkmdz.chattool.activity.custom.MySurface.java&apos;" description="Delete element" element1="/src&lt;com.pkmdz.chattool.activity.custom{MySurface.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1454755945335" subPackages="false" version="1.0"/>
+</session>
