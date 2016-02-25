@@ -4,5 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.pkmdz.chattool.MainActivity"
-    tools:ignore="MergeRootFrame" />
+    tools:ignore="MergeRootFrame" >
+    
+    <ListView android:id="@id/android:list" android:layout_width="fill_parent"
+        android:layout_height="0dip" android:layout_weight="1"
+        android:drawSelectorOnTop="false" />
+    <TextView android:id="@id/android:empty" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="Can not find the file!" />
+</FrameLayout>
 
