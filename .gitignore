@@ -84,3 +84,9 @@ $RECYCLE.BIN/
 *.lnk
 .metadata
 MediaTest/
+.recommenders/caches/identified-project-coordinates.json
+.recommenders/caches/manual-mappings.json
+.metadata/
+.recommenders/
+appcompat_v7/
+5.rar
