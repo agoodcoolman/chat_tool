@@ -90,3 +90,16 @@ MediaTest/
 .recommenders/
 appcompat_v7/
 5.rar
+ChatTool/obj/
+ChatTool/obj/local/armeabi-v7a/libRTMPSender.so
+ChatTool/obj/local/armeabi-v7a/libRTMPSender.so
+*.d
+ChatTool/obj/local/armeabi/objs/RTMPSender/RTMPStream.o.d
+ChatTool/obj/local/armeabi/objs/RTMPSender/RTMPStream.o.d
+ChatTool/obj/local/armeabi/objs/RTMPSender/com_pkmdz_chattool_rtmpnative_RTMPNative.o.d
+ChatTool/obj/local/armeabi-v7a/libRTMPSender.so
+ChatTool/obj/local/armeabi-v7a/objs/RTMPSender/common.o
+ChatTool/obj/local/armeabi-v7a/objs/RTMPSender/common.o.d
+ChatTool/obj/local/armeabi-v7a/objs/RTMPSender/common.o.d
+ChatTool/obj/local/armeabi/libRTMPSender.so
+ChatTool/obj/local/armeabi-v7a/objs/RTMPSender/RTMPStream.o

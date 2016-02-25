@@ -31,7 +31,7 @@ public class PushService extends Service {
 	public void onCreate() {
 		super.onCreate();
 		initTimer();
-		startTimer();
+		
 	}
 	
 	private void initTimer () {
@@ -92,6 +92,14 @@ public class PushService extends Service {
 		
 		public PushService getService() {
 			return PushService.this;
+		}
+		
+		public void stopTask() {
+			stopTask();
+		}
+		
+		public void startTask() {
+			startTimer();
 		}
 	}
 

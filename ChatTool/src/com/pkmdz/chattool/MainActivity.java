@@ -1,5 +1,7 @@
 package com.pkmdz.chattool;
 
+import io.vov.vitamio.utils.Log;
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -22,6 +24,7 @@ import com.pkmdz.chattool.service.PushService;
 import com.pkmdz.chattool.service.PushService.UrlBinder;
 import com.pkmdz.chattool.service.SucessReceiveLisener;
 
+@SuppressLint("NewApi")
 public class MainActivity extends ActionBarActivity implements SucessReceiveLisener {
 	private ServiceConnection connect = new ServiceConnection() {
 
@@ -55,7 +58,6 @@ public class MainActivity extends ActionBarActivity implements SucessReceiveLise
     	
     	bindService(intent, connect, BIND_AUTO_CREATE);
     	
-    	
     }
 
 
@@ -88,7 +90,8 @@ public class MainActivity extends ActionBarActivity implements SucessReceiveLise
         public PlaceholderFragment() {
         }
 
-        @Override
+        @SuppressLint("NewApi")
+		@Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
@@ -107,7 +110,8 @@ public class MainActivity extends ActionBarActivity implements SucessReceiveLise
 
 	@Override
 	public void onSucess() {
-		Toast.makeText(this, "请求成功", 0).show();
+//		Toast.makeText(this, "请求成功", 0).show();
+		Log.i("MainActivity", "sa");
 	}
 
 }
