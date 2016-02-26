@@ -1,6 +1,7 @@
 package com.pkmdz.chattool.service;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -71,6 +72,7 @@ public class PushService extends Service {
 			public void run() {
 
 				try {
+					// 查询是否有需要视频的用户
 					StringRequest stringRequest = new StringRequest(
 							Request.Method.GET, InterfaceUtils.query,
 							new Response.Listener<String>() {
@@ -107,6 +109,39 @@ public class PushService extends Service {
 					stringRequest.setShouldCache(false);
 					requestQueue.add(stringRequest);
 
+					// 更新当前的用户的在线时间
+					StringRequest updateLoginRequest = new StringRequest(
+							Request.Method.GET, InterfaceUtils.UPDATE_LOGIN_TIME + new Date().getTime(),
+							new Response.Listener<String>() {
+
+								@Override
+								public void onResponse(String response) {
+									// System.out.println(response);
+
+									// 这里判断下读入的数据,是否符合标准
+									LoggerUtils.i("PushServices更新用户" + response);
+									
+									User fromJson = JsonUtils.fromJson(response.toString(), new TypeToken<User>(){});
+									// 判断下是否要视频
+									if (fromJson != null && sucessReceiveListener != null)
+										sucessReceiveListener.receiveVideoCall();
+								}
+							}, new Response.ErrorListener() {
+
+								@Override
+								public void onErrorResponse(VolleyError error) {
+									// System.out.println("sorry,Error");
+
+								}
+							}) {
+						public java.util.Map<String,String> getHeaders() throws AuthFailureError {
+							LinkedHashMap<String, String> maps = new LinkedHashMap<String, String>();
+							maps.put("Cookie", cookie);
+							return maps;
+						};
+					};
+					updateLoginRequest.setShouldCache(false);
+					requestQueue.add(updateLoginRequest);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -194,6 +229,5 @@ public class PushService extends Service {
 				e.printStackTrace();
 			}
 		}
-
 	}
 }

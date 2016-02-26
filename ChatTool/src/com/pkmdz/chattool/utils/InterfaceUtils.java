@@ -16,4 +16,7 @@ public class InterfaceUtils {
 	public static final  String query = "http://120.27.118.186/index.php?s=/admin/video/voCallmePoll.html";
 	//登录
 	public static final  String LOGIN_URL = "http://120.27.118.186/index.php?s=/Admin/Login/appLogin.html";
+	
+	// 更新在线时间
+	public static final  String UPDATE_LOGIN_TIME = "http://120.27.118.186/index.php?s=/admin/index/updateLastCheckTime.html&";
 }
